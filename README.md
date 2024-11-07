@@ -152,8 +152,8 @@ Mfg NTC (0), Vendor NPCT75x"!!4rls, Fw 7.2 (131072), FIPS 140-2 1, CC-EAL4 0
 ### Building wolfSSL
 
 ```bash
-git clone https://github.com/wolfSSL/wolfssl.git
-cd wolfssl
+git clone https://github.com/wolfSSL/wolfTPM.git
+cd wolfTPM
 ./autogen.sh
 ./configure --enable-wolftpm
 make
@@ -161,7 +161,10 @@ sudo make install
 sudo ldconfig
 ```
 
-autogen.sh requires: automake and libtool: `sudo apt-get install automake libtool`
+autogen.sh requires your system's development tools, and the automake and libtool packages
+
+On Debian systems (e.g. Ubuntu): `sudo apt-get install build-essential automake libtool`
+RHEL/CentOS/Fedora: `sudo dnf groupinstall "Development Tools" && sudo dnf install automake autoconf libtool`
 
 ### Building wolfSSL with an alternate directory
 
